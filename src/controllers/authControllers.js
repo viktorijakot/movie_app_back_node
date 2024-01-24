@@ -23,7 +23,7 @@ const login = async (req, res, next) => {
   const passwordHash = foundUserInDB.password;
 
   if (!bcrypt.compareSync(password, passwordHash)) {
-    return next(new ApiError('Password or email not match (pass not match)', 401));
+    return next(new ApiError('Password or email not match', 401));
   }
 
   const token = makeJWTToken({ email, sub: foundUserInDB.id });

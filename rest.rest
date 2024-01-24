@@ -7,7 +7,7 @@ Content-Type: application/json
 
 {
     "email": "james@bond",
-    "password": "123456"
+    "password": "12345"
 }
 
 ### POST register
