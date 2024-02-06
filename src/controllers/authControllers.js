@@ -25,10 +25,14 @@ const login = async (req, res, next) => {
   if (!bcrypt.compareSync(password, passwordHash)) {
     return next(new ApiError('Password or email not match', 401));
   }
+  // const { userName } = rowsArr[0];
 
-  const token = makeJWTToken({ email, sub: foundUserInDB.id });
+  const token = makeJWTToken({
+    email, sub: foundUserInDB.id, userId: foundUserInDB.id, scope: foundUserInDB.scope, userName: foundUserInDB.userName,
+  });
+  console.log('token ===', foundUserInDB);
   return res.json({
-    msg: 'login success',
+    msg: `Welcome ${foundUserInDB.userName} !`,
     token,
   });
 };
@@ -36,7 +40,9 @@ const login = async (req, res, next) => {
 const register = async (req, res, next) => {
   console.log('req.body ===', req.body);
   const { email, password, userName } = req.body;
-  const passwordHash = bcrypt.hashSync(password, 10);
+
+  const salt = process.env.SALT || 5;
+  const passwordHash = bcrypt.hashSync(password, +salt);
   const [resObj, error] = await authModels.registerSql([email, passwordHash, userName]);
 
   if (error) {
