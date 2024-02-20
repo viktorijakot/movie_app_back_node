@@ -16,7 +16,16 @@ const registerSql = (data) => {
   return makeSqlQuery(sql, data);
 };
 
+const getAllUsersSql = () => {
+  const sql = `
+    SELECT email, userName FROM users
+    `;
+
+  return makeSqlQuery(sql);
+};
+
 module.exports = {
   loginSql,
   registerSql,
+  getAllUsersSql,
 };
