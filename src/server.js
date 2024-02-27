@@ -6,6 +6,7 @@ const authRouter = require('./routes/authRoutes');
 const { mainErrroHandler, validateToken } = require('./middleware');
 const usersRouter = require('./routes/usersRoutes');
 const relationsRouter = require('./routes/relationsRoutes');
+const moviesRouter = require('./routes/moviesRoutes');
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 app.use('/api', authRouter);
 app.use('/api', validateToken, usersRouter);
 app.use('/api', relationsRouter);
+app.use('/api', moviesRouter);
 
 app.use(mainErrroHandler);
 

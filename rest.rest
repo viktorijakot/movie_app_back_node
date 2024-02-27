@@ -45,3 +45,20 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQ
     "follows": "6",
     "userName": "vika"
 }
+
+### DELETE relation
+DELETE  http://localhost:3001/api/relations/3
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGJvbmQiLCJzdWIiOjEsInVzZXJJZCI6MSwidXNlck5hbWUiOiJqYW1lcyIsImlhdCI6MTcwOTAzNTg4MSwiZXhwIjoxNzA5MDM5NDgxfQ.fcp_Foy952aMc5xnGGEvV_tEIwkc0N7assAJYdOTbqU
+
+### POST relation
+POST http://localhost:3001/api/myMoviesList
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGJvbmQiLCJzdWIiOjEsInVzZXJJZCI6MSwidXNlck5hbWUiOiJqYW1lcyIsImlhdCI6MTcwOTA0NDc0MywiZXhwIjoxNzA5MDQ4MzQzfQ.V_45lY2IvvAR0T2xbWaLVYQJ8kr6ijRFQCDli1-7Zfc
+
+
+{
+    "movieId": "justLink",
+    "description": "very very interesting",
+    "title": "Movie Title",
+    "imgUrl": "Urls"
+}

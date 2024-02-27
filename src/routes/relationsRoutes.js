@@ -3,10 +3,12 @@ const relationsController = require('../controllers/relationsControllers');
 
 const relationsRouter = express.Router();
 
-relationsRouter.get('/relations/myfollowers', relationsController.getAllWhoFollowsMe);
+relationsRouter.get('/relations/myfollows', relationsController.getAllUsersWhoIFollow);
 
-relationsRouter.get('/relations/myfollows', relationsController.getAllUsersWhoFollowI);
+relationsRouter.get('/relations/myfollowers', relationsController.getAllUsersWhoFollowsMe);
 
 relationsRouter.post('/relations', relationsController.createNewFollowRelation);
+
+relationsRouter.delete('/relations/:id', relationsController.updateFollow);
 
 module.exports = relationsRouter;

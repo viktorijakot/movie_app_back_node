@@ -1,8 +1,8 @@
 const ApiError = require('../apiError/ApiError');
 const relationsModels = require('../models/relationsModels');
 
-const getAllWhoFollowsMe = async (req, res, next) => {
-  const [usersFollowsArr, error] = await relationsModels.SQLgetAllWhoFollowsMe([req.userId]);
+const getAllUsersWhoIFollow = async (req, res, next) => {
+  const [usersFollowsArr, error] = await relationsModels.SQLgetAllUsersWhoIFollow([req.userId]);
 
   if (error) {
     console.log('error in get all users ===');
@@ -12,8 +12,8 @@ const getAllWhoFollowsMe = async (req, res, next) => {
   return res.json(usersFollowsArr);
 };
 
-const getAllUsersWhoFollowI = async (req, res, next) => {
-  const [usersIFollowArr, error] = await relationsModels.SQLgetAllUsersWhoIFollow([req.userId]);
+const getAllUsersWhoFollowsMe = async (req, res, next) => {
+  const [usersIFollowArr, error] = await relationsModels.SQLgetAllWhoFollowsMe([req.userId]);
 
   if (error) {
     console.log('error in get all users ===');
@@ -41,8 +41,28 @@ const createNewFollowRelation = async (req, res, next) => {
   });
 };
 
+const updateFollow = async (req, res, next) => {
+  const { id } = req.params;
+  console.log('userId ===', id);
+  const [responseObject, error] = await relationsModels.SQLDeleteFollow([id]);
+
+  if (error) {
+    console.log('error in adding follow ===');
+    return next(error);
+  }
+
+  if (responseObject.affectedRows !== 1) {
+    return next(new ApiError('Something wrong with unfollow', 400));
+  }
+  console.log('responseObject ===', responseObject);
+  return res.status(201).json({
+    msg: 'You just unfollowed ',
+  });
+};
+
 module.exports = {
-  getAllWhoFollowsMe,
-  getAllUsersWhoFollowI,
+  getAllUsersWhoFollowsMe,
+  getAllUsersWhoIFollow,
   createNewFollowRelation,
+  updateFollow,
 };
