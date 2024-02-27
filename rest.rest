@@ -24,3 +24,24 @@ Content-Type: application/json
 
 GET http://localhost:3001/api/users
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGJvbmQiLCJzdWIiOjEsInVzZXJJZCI6MSwidXNlck5hbWUiOiJqYW1lcyIsImlhdCI6MTcwODQxNTc1MiwiZXhwIjoxNzA4NDE5MzUyfQ.BV706VxLvay3a5fef6Lrsghoddp1Grw0Szv3DD4G3Is
+
+### GET all users  who Follows me
+
+GET http://localhost:3001/api//relations/myfollowers
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGJvbmQiLCJzdWIiOjEsInVzZXJJZCI6MSwidXNlck5hbWUiOiJqYW1lcyIsImlhdCI6MTcwOTAyMzQyMywiZXhwIjoxNzA5MDI3MDIzfQ.9AdRq_AfIki4fBfoUPdvuKTki3rUFeo0b8I97NiTFkY
+
+### GET all users who I follow
+
+GET http://localhost:3001/api/relations/myfollows
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGJvbmQiLCJzdWIiOjEsInVzZXJJZCI6MSwidXNlck5hbWUiOiJqYW1lcyIsImlhdCI6MTcwOTAyMzQyMywiZXhwIjoxNzA5MDI3MDIzfQ.9AdRq_AfIki4fBfoUPdvuKTki3rUFeo0b8I97NiTFkY
+
+### POST relation
+POST http://localhost:3001/api/relations
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGJvbmQiLCJzdWIiOjEsInVzZXJJZCI6MSwidXNlck5hbWUiOiJqYW1lcyIsImlhdCI6MTcwOTAyMzQyMywiZXhwIjoxNzA5MDI3MDIzfQ.9AdRq_AfIki4fBfoUPdvuKTki3rUFeo0b8I97NiTFkY
+
+
+{
+    "follows": "6",
+    "userName": "vika"
+}
