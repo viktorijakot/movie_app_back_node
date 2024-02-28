@@ -15,7 +15,16 @@ DELETE FROM movies WHERE movie_id=?
   return makeSqlQuery(sql, movieId);
 };
 
+const SqlGetAllUsersMovies = (userId) => {
+  const sql = `
+    SELECT * FROM movies WHERE user_id=?
+        `;
+
+  return makeSqlQuery(sql, userId);
+};
+
 module.exports = {
   SqlAddMovieToUser,
   SqlRemoveMovieFromUser,
+  SqlGetAllUsersMovies,
 };

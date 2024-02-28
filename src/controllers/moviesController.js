@@ -41,7 +41,21 @@ const deleteMovieFromUser = async (req, res, next) => {
     msg: 'You just removed movie from your movie list ',
   });
 };
+
+const getAllUsersMovies = async (req, res, next) => {
+  const { id } = req.params;
+  console.log('userId ===', id);
+  const [moviesArr, error] = await moviesModels.SqlGetAllUsersMovies([id]);
+
+  if (error) {
+    console.log('error in get all users movies ===');
+    return next(error);
+  }
+
+  return res.json(moviesArr);
+};
 module.exports = {
   addMovieToUser,
   deleteMovieFromUser,
+  getAllUsersMovies,
 };
