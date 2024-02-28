@@ -28,6 +28,7 @@ const validateToken = async (req, res, next) => {
     console.log('decoded ===', decoded);
     req.userEmail = decoded.email;
     req.userId = decoded.userId;
+    req.scope = decoded.scope;
     console.log('req.userEmail  ===', req.userEmail);
     console.log('req.userId ===', req.userId);
     next();

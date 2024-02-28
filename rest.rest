@@ -62,3 +62,14 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQ
     "title": "Movie Title",
     "imgUrl": "Urls"
 }
+
+### PUT update user
+PUT http://localhost:3001/api/users/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGJvbmQiLCJzdWIiOjEsInVzZXJJZCI6MSwidXNlck5hbWUiOiJqYW1lcyIsImlhdCI6MTcwOTEwNzkyMCwiZXhwIjoxNzA5MTExNTIwfQ.0rPUJGyV9spjrmfLhstEr3C3B5LydFgEBKnpv3mSF8A
+
+{
+    "userName": "JamesJames",
+    "imgUrl": "urlurl"
+
+}
