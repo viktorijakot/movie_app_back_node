@@ -2,7 +2,7 @@ const { makeSqlQuery } = require('../helper');
 
 const getAllUsersSql = () => {
   const sql = `
-      SELECT id, email, userName FROM users
+      SELECT id, email, userName, img_url FROM users
       `;
 
   return makeSqlQuery(sql);

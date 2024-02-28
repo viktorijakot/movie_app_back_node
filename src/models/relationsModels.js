@@ -2,7 +2,7 @@ const { makeSqlQuery } = require('../helper');
 
 const SQLgetAllUsersWhoIFollow = (userId) => {
   const sql = `
-  SELECT id, email, userName FROM users u WHERE EXISTS ( SELECT * FROM relations r WHERE r.follows = u.id AND r.user_id = ?);
+  SELECT id, email, userName, img_url FROM users u WHERE EXISTS ( SELECT * FROM relations r WHERE r.follows = u.id AND r.user_id = ?);
       `;
 
   return makeSqlQuery(sql, userId);
@@ -10,7 +10,7 @@ const SQLgetAllUsersWhoIFollow = (userId) => {
 
 const SQLgetAllWhoFollowsMe = (userId) => {
   const sql = `
-    SELECT id, email, userName FROM users u
+    SELECT id, email, userName, img_url FROM users u
 WHERE EXISTS ( SELECT * FROM relations r WHERE r.user_id = u.id AND r.follows = ?);
     `;
 

@@ -4,4 +4,6 @@ const moviesController = require('../controllers/moviesController');
 const moviesRouter = express.Router();
 
 moviesRouter.post('/myMoviesList', moviesController.addMovieToUser);
+moviesRouter.delete('/myMoviesList/:id', moviesController.deleteMovieFromUser);
+
 module.exports = moviesRouter;
