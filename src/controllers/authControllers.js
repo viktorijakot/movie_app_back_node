@@ -28,7 +28,7 @@ const login = async (req, res, next) => {
   // const { userName } = rowsArr[0];
 
   const token = makeJWTToken({
-    email, sub: foundUserInDB.id, userId: foundUserInDB.id, scope: foundUserInDB.scope, userName: foundUserInDB.userName,
+    email, sub: foundUserInDB.id, userId: foundUserInDB.id, scope: foundUserInDB.scope, userName: foundUserInDB.userName, imgUrl: foundUserInDB.img_url,
   });
   console.log('token ===', foundUserInDB);
   return res.json({
