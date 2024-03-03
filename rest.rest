@@ -73,3 +73,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQ
     "imgUrl": "urlurl"
 
 }
+
+### GET all movie comments
+GET http://localhost:3001/api/comments/tt0372784
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImphbWVzQGJvbmQiLCJzdWIiOjEsInVzZXJJZCI6MSwidXNlck5hbWUiOiJKYW1lc0phbWVzIiwiaW1nVXJsIjpudWxsLCJpYXQiOjE3MDk0NTY3ODAsImV4cCI6MTcwOTQ2MDM4MH0.jT-bA7MvIZxFmbrBDvquoo2PFeq2wvvn0AaOb-R-LVo
