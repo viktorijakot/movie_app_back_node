@@ -54,8 +54,20 @@ const getAllUsersMovies = async (req, res, next) => {
 
   return res.json(moviesArr);
 };
+
+const getAllUsersByLikedMovies = async (req, res, next) => {
+  const { movieId } = req.params;
+  const [moviesArr, error] = await moviesModels.SqlGetAllUsersBylikedMovie([movieId]);
+
+  if (error) {
+    console.log('error in get all liked movies ===');
+    return next(error);
+  }
+  return res.json(moviesArr);
+};
 module.exports = {
   addMovieToUser,
   deleteMovieFromUser,
   getAllUsersMovies,
+  getAllUsersByLikedMovies,
 };

@@ -10,6 +10,7 @@ const usersRouter = require('./routes/usersRoutes');
 const relationsRouter = require('./routes/relationsRoutes');
 const moviesRouter = require('./routes/moviesRoutes');
 const commentsRouter = require('./routes/commentsRoutes');
+const ratingRouter = require('./routes/ratingRoutes');
 
 const app = express();
 
@@ -30,6 +31,7 @@ app.use('/api', validateToken, usersRouter);
 app.use('/api', relationsRouter);
 app.use('/api', moviesRouter);
 app.use('/api', commentsRouter);
+app.use('/api', ratingRouter);
 
 app.use(mainErrroHandler);
 
